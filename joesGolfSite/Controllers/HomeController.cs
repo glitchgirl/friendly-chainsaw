@@ -1,103 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using joesGolfSite.Models;
-using System.Data.SqlClient;
-using System.Data.Entity.Infrastructure;
-using joesGolfSite.Models.ViewModels;
+﻿using joesGolfSite.Models;
 using Newtonsoft.Json;
+using System.Data.Entity.Infrastructure;
+using System.Linq;
+using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
 namespace joesGolfSite.Controllers
 {
     public class HomeController : Controller
     {
+        public GolfSiteDbContext dbgolf = new GolfSiteDbContext();
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Register()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Teams()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
-        public ActionResult Submit(Registerer data)
-        {
-            var model = new Registerer();
-            model = data;
-            Create(data);
-            return View("About",model);
-        }
         [HttpPost]
-        public ActionResult LoadPage(AdminDisplayViewModel model)
+        public ActionResult LoadPage(string AdminCode)
         {
-            if (model.AdminCode == "RSI")
+            if (AdminCode == "48DD25BF-84E6-4D73-AAFD-BEBC6D9DD729")
             {
-                Read();
-                return View("Results");
+                var registerers = dbgolf.Registerers;
+                return View("RegistererList", registerers);
             }
-            else
-            {
-                return View("Contact");
-            }
+            return View("Teams");
+
         }
-        //public ActionResult Results(AdminDisplayResultsViewModel model)
-        //{
-        //    Read();
-        //    return View("Results", model);
-        //}
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FirstName, LastName, EmailAddress, Phone, TeamName, ShirtSize, Teammembers")]Registerer register)
+        public ActionResult Register(Registerer register)
         {
-           var db = new GolfSiteDbContext();
+            var db = new GolfSiteDbContext();
             try
             {
                 if (ModelState.IsValid)
                 {
                     db.Registerers.Add(register);
                     db.SaveChanges();
-                    return  View("About");
+                    return View();
                 }
             }
-            catch (RetryLimitExceededException )
+            catch (RetryLimitExceededException)
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
             }
-            return View("About");
+            return View(register);
         }
-        public ActionResult Read()
-        {
-            var db = new GolfSiteDbContext();
-            var model = new AdminDisplayResultsViewModel();
-            try
-            {
-               // var results = db.Registerers.AsEnumerable().ToString();
-                var results =JsonConvert.DeserializeObject(JsonConvert.SerializeObject(db.Registerers.AsEnumerable()));
-                var example1Model = new JavaScriptSerializer().Deserialize<Registerer>(JsonConvert.SerializeObject(db.Registerers.AsEnumerable()).ToString());
-                model.DisplayResults = "";
-
-                var blah = "no";
-                
-            }
-            catch
-            {
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
-            }
-            return View("Results", model);
-        }
-
     }
 }
