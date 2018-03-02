@@ -1,17 +1,13 @@
-﻿@{
+﻿@model joesGolfSite.Models.ViewModels.AdminDisplayResultsViewModel
+@{
     ViewBag.Title = "Registered Teams";
 }
 <h2>@ViewBag.Title</h2>
-<label>Code:</label><input type="text" />
-<button onclick="loadPage()">Go!</button>
 
-<script>
-    function loadPage() {
-        if (true) {
 
-        }
-        else {
-            
-        }
-    }
-</script>
+@using (Html.BeginForm("LoadPage", "Home", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+{
+    <label>Code:</label><input type="text" name="AdminCode"/>
+    <input type="submit" value="Go!"/>
+}
+

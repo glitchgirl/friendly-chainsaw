@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    color:#054208;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,26 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#navbar-custom { 
+    color: #ffffff !important;
+    background-color: #054208 !important;
+    text-align: center;
+}
+a {
+   color:#fff !important;
+}
+
+li a {
+    color: #ffffff !important;
+}
+h3 {
+    text-align:center;
+}
+img {
+    float: left;
+    height:50px;
+    width:100px;
+    padding-right: 10px;
 }
