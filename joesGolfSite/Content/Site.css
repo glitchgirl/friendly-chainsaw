@@ -1,7 +1,20 @@
-﻿body {
+﻿/*
+    Color palette
+    dark green: #152719
+    bright green: #1E4504
+    light green: #5B7840
+    neutral: #C0AD75
+    off white: #E9F1F4
+    then white
+
+*/
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-    color:#054208;
+    color: #152719;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,24 +37,102 @@ textarea {
     max-width: 280px;
 }
 
-#navbar-custom { 
+#navbar-custom {
     color: #ffffff !important;
-    background-color: #054208 !important;
+    background-color: #152719 !important;
     text-align: center;
 }
+
 a {
-   color:#fff !important;
+    color: #fff !important;
 }
 
 li a {
     color: #ffffff !important;
 }
+
 h3 {
+    text-align: center;
+}
+
+.logos {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+    .logos img {
+        height: 300px;
+        width: 300px;
+        padding: 16px;
+        text-align: center;
+    }
+
+.information {
+    text-align: center;
+    color: #152719;
+}
+
+.info {
+    text-align: center;
+    color: #fff;
+    background-color: #1E4504;
+}
+
+.section1 {
+}
+
+.section2 {
+}
+
+.section3 {
+    text-align: center;
+    background: #C0AD75;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: none;
+    }
+}
+.goldspon {
     text-align:center;
 }
-img {
-    float: left;
-    height:50px;
-    width:100px;
-    padding-right: 10px;
+.silverspon {
+    text-align:center;
+}
+.bronzespon {
+    text-align:center;
+}
+
+.goldspon img {
+    height: 250px;
+    width: 250px;
+    padding: 16px;
+    text-align: center;
+    margin: auto;
+}
+
+.silverspon img {
+    height: 200px;
+    width: 200px;
+    padding: 16px;  
+    text-align: center;
+    margin: auto;
+}
+
+.bronzespon img {
+    height: 150px;
+    width: 150px;
+    padding: 16px;
+    text-align: center;
+    margin: auto;
+}
+
+btn {
+    text-align:center;
 }
