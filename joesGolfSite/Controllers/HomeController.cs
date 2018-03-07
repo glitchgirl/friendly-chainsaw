@@ -21,7 +21,7 @@ namespace joesGolfSite.Controllers
             return View();
         }
 
-        public ActionResult RegistererList()
+        public ActionResult RegistererList(Registerer register)
         {
             return View();
         }
