@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201803021936066_goteam.Designer.cs">
       <DependentUpon>201803021936066_goteam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803072135542_teammembers.cs" />
+    <Compile Include="Migrations\201803072135542_teammembers.Designer.cs">
+      <DependentUpon>201803072135542_teammembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\GolfSiteDbContext.cs" />
     <Compile Include="Models\Registerer.cs" />
@@ -279,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803021936066_goteam.resx">
       <DependentUpon>201803021936066_goteam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803072135542_teammembers.resx">
+      <DependentUpon>201803072135542_teammembers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

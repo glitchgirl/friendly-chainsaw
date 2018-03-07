@@ -30,8 +30,13 @@ namespace joesGolfSite.Models
         [Required]
         [Display(Name = "Shirt Size")]
         public string ShirtSize { get; set; }
-        [Required]
-        [Display(Name = "Other Team Members")]
-        public string TeamMembers { get; set; }
+        
+        [Display(Name = "Team Member 1:")]
+        public string TeamMember1 { get; set; }
+
+        [Display(Name = "Team Member 2:")]
+        public string TeamMember2 { get; set; }
+        [Display(Name = "Team Member 3:")]
+        public string TeamMember3 { get; set; }
     }
 }
