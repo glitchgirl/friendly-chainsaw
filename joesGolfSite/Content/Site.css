@@ -19,8 +19,6 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -132,7 +130,6 @@ p {
     text-align: center;
     margin: auto;
 }
-
-btn {
-    text-align:center;
+ a{
+    color:#152719;
 }

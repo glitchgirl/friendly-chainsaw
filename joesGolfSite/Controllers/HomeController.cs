@@ -23,7 +23,14 @@ namespace joesGolfSite.Controllers
 
         public ActionResult Teams()
         {
-            return View();
+            var registerers = dbgolf.Registerers;
+            return View("RegistererList", registerers);
+        }
+
+        public ActionResult AdminView()
+        {
+            var registerers = dbgolf.Registerers;
+            return View("AdminView", registerers);
         }
 
         [HttpPost]
@@ -49,7 +56,7 @@ namespace joesGolfSite.Controllers
                 {
                     db.Registerers.Add(register);
                     db.SaveChanges();
-                    return View();
+                    return View("Index");
                 }
             }
             catch (RetryLimitExceededException)
