@@ -21,11 +21,23 @@ namespace joesGolfSite.Controllers
             return View();
         }
 
-        public ActionResult RegistererList()
+        public ActionResult Teams()
         {
             return View();
         }
-     
+
+        [HttpPost]
+        public ActionResult LoadPage(string AdminCode)
+        {
+            if (AdminCode == "48DD25BF-84E6-4D73-AAFD-BEBC6D9DD729")
+            {
+                var registerers = dbgolf.Registerers;
+                return View("RegistererList", registerers);
+            }
+            return View("Teams");
+
+        }
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(Registerer register)

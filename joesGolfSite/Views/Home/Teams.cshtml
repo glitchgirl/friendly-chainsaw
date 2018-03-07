@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Registered Teams";
+}
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("LoadPage", "Home", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+{
+    <label>Code:</label><input type="text" name="AdminCode"/>
+    <input type="submit" value="Go!"/>
+}
+
