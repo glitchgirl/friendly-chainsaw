@@ -9,7 +9,6 @@
 
 */
 
-
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -41,14 +40,6 @@ textarea {
     text-align: center;
 }
 
-a {
-    color: #fff !important;
-}
-
-li a {
-    color: #ffffff !important;
-}
-
 h3 {
     text-align: center;
 }
@@ -56,14 +47,11 @@ h3 {
 .logos {
     margin: auto;
     width: 50%;
-    text-align: center;
 }
 
-    .logos img {
+.logos img {
         height: 300px;
         width: 300px;
-        padding: 16px;
-        text-align: center;
     }
 
 .information {
@@ -73,19 +61,16 @@ h3 {
 
 .info {
     text-align: center;
-    color: #fff;
-    background-color: #1E4504;
-}
-
-.section1 {
+    color:  #152719;
 }
 
 .section2 {
+    columns:2; 
+    background-color:#e2e2d3;
 }
 
 .section3 {
     text-align: center;
-    background: #C0AD75;
 }
 
 p {
